@@ -38,3 +38,17 @@ As a last step, the optimization was run for different train/test splits. The mo
 !['ROC curves'](ROC.png)
 
 > The ROC curves and AUC-ROC scores shows that the optimal model performs very well on classifying the tweets by individual author. (Only one author has a score less than .90). However, the curves and scores seem perhaps too good. With more time, it would be worth constructing TOC curves, which include the true and false negative results as well.
+
+## Further steps
+
+For clustering, hashtags could be completely replaced with bigrams.
+Additional features could be engineered after analyzing the results for the classes with lower scores.
+More effort could be put into preprocessing the tweet text data, such as customizing stop words.
+Features based on POS tagging and other semantic approaches could be added to the classification
+
+
+
+## Takeaways
+
+Even basic NLP methods can be very effective at classification tasks given a reasonably large dataset.
+Vocabulary-based methods work particularly well for Twitter data.
