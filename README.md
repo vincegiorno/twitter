@@ -1,7 +1,7 @@
 
 ## A brief exploration of clustering and classification on Twitter data
 
-The goal of this project was to apply clustering and classification to text data with multiple authors. For the text data I chose to gather recent tweets from 15 data science influencers on Twitter, as identified in a Hacker Noon post I have seen referenced. They are (with their Twitter handles): Kirk Borne (KirkDBorne), Ronald van Loon (Ronald_vanLoon), Craig Brown (craigbrownphd), Bob Hayes (bobehayes), Bernard Marr (BernardMarr), Lillian Pierson (BigDataGal), Andrew Ng (AndrewYNg), Monica Rogati (mrogati), Carla Gentry (data_nerd), Gregory Piatetsky (kdnuggets), Vincent Granville (analyticsbridge), Naval Ravikant (naval), Tamara Dull (tamaradull), Hilary Mason (hmason) and Evan Sinar (Evan Sinar).
+The goal of this project was to apply clustering and classification to text data with multiple authors. For the text data I chose to gather recent tweets from 15 data science influencers on Twitter, as identified in a Hacker Noon post I have seen referenced. They are (with their Twitter handles): Kirk Borne (KirkDBorne), Ronald van Loon (Ronald_vanLoon), Craig Brown (craigbrownphd), Bob Hayes (bobehayes), Bernard Marr (BernardMarr), Lillian Pierson (BigDataGal), Andrew Ng (AndrewYNg), Monica Rogati (mrogati), Carla Gentry (data_nerd), Gregory Piatetsky (kdnuggets), Vincent Granville (analyticsbridge), Naval Ravikant (naval), Tamara Dull (tamaradull), Hilary Mason (hmason) and Evan Sinar (Evan Sinar). Since all 15 would be expected to tweet about data science topics, the classification should be overly easy.
 
 ## Clustering
 
@@ -37,18 +37,21 @@ As a last step, the optimization was run for different train/test splits. The mo
 
 !['ROC curves'](ROC.png)
 
-> The ROC curves and AUC-ROC scores shows that the optimal model performs very well on classifying the tweets by individual author. (Only one author has a score less than .90). However, the curves and scores seem perhaps too good. With more time, it would be worth constructing TOC curves, which include the true and false negative results as well.
+> The ROC curves and AUC-ROC scores shows that the optimal model performs reasonably well on classifying the tweets by individual author, considering that there are 15 classes. MOre than half of the classes have ROC-AUC scores of .85 or above, and only one is below .75.
+
+###Clustering vs classification
+
+As part of the project idea was to compare classification vs clustering on text data, I ran a basic comparison using the adjusted Rand score to see how close clustering would come to the classification performance. I used a basic logistic regression estimator instead of the optimized one to start with, and a basic k-means clustering algorithm with the number of clusters set to 15. Running both on the basic vectorized tweet texts, the logistic regression classification achieved an adjusted Rand score of .81, while k-means clustering achieved only .10. I stopped there.
 
 ## Further steps
 
-For clustering, hashtags could be completely replaced with bigrams.
-Additional features could be engineered after analyzing the results for the classes with lower scores.
-More effort could be put into preprocessing the tweet text data, such as customizing stop words.
-Features based on POS tagging and other semantic approaches could be added to the classification
-
-
+- For clustering authors, hashtags could be completely replaced with bigrams and mentions removed to try and cluster just on content.
+- For both clustering authors and classifying tweets by author, additional preprocessing of the tweet text data, such as customizing stop words.
+- Additional classification features could be engineered based on analysis of the results for the classes with lower scores.
+- More generally, features based on POS tagging and other semantic approaches could be used in the classification.
 
 ## Takeaways
 
-Even basic NLP methods can be very effective at classification tasks given a reasonably large dataset.
-Vocabulary-based methods work particularly well for Twitter data.
+Even basic NLP methods can be very effective at classification tasks given a reasonably large collection of text.
+Conversely, more complicated methods do not necessarily give better results.
+A vocabulary-based approach using tf-idf vectorization can work particularly well for Twitter data.
