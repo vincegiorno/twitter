@@ -52,6 +52,6 @@ As part of the project idea was to compare classification vs clustering on text 
 
 ## Takeaways
 
-Even basic NLP methods can be very effective at classification tasks given a reasonably large collection of text.
-Conversely, more complicated methods do not necessarily give better results.
-A vocabulary-based approach using tf-idf vectorization can work particularly well for Twitter data.
+- Even basic NLP methods can be very effective at classification tasks given a reasonably large collection of text.
+- Conversely, more complicated methods do not necessarily give better results.
+- A vocabulary-based approach using tf-idf vectorization can work particularly well for Twitter data.
