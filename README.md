@@ -39,7 +39,7 @@ As a last step, the optimization was run for different train/test splits. The mo
 
 > The ROC curves and AUC-ROC scores shows that the optimal model performs reasonably well on classifying the tweets by individual author, considering that there are 15 classes. MOre than half of the classes have ROC-AUC scores of .85 or above, and only one is below .75.
 
-###Clustering vs classification
+### Clustering vs classification
 
 As part of the project idea was to compare classification vs clustering on text data, I ran a basic comparison using the adjusted Rand score to see how close clustering would come to the classification performance. I used a basic logistic regression estimator instead of the optimized one to start with, and a basic k-means clustering algorithm with the number of clusters set to 15. Running both on the basic vectorized tweet texts, the logistic regression classification achieved an adjusted Rand score of .81, while k-means clustering achieved only .10. I stopped there.
 
