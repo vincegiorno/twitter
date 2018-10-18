@@ -22,7 +22,7 @@ The third and final attempt tried to compensate for the highly divergent use of 
 ![‘clustering plot’](cluster_plot.png)
 > *In the final clustering, none of the clusters overlap even though the two components being graphed explain less than 20% of the total variance. This low explained variance also provides reasonable cause for the two points closest together in the graph, near (0.3, -0.4) being assigned to different clusters.*
 
-The main topics for the clusters changed little between the first and third attempts, although it became more difficult to find terms common to all cluster members as clusters increased in size. Following is a diagram showing the clusters and key terms close to the cluster centers:
+The main topics for the clusters changed little between the first and third attempts, although it became more difficult to find terms common to all cluster members as clusters increased in size. Following is a diagram showing the clusters and key terms close to the cluster centers. Lines connect clusters that share a key term:
 
 ![‘diagram showing final clusters’](clusters.png)
 
